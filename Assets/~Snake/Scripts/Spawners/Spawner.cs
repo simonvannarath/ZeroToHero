@@ -21,6 +21,11 @@ namespace Snake
             // InvokeRepeating("Spawn", startTime, spawnRate);
             // GameManager.Instance.onSpawn += Spawn;      // Subscribe function to this function call 
         }
+				
+				void OnDestroy()
+				{
+					UnSubscribe();	// Once object is destroyed, unsubscribe from GameManager's onSpawn delagate
+				}
 
         public void Subscribe()
         {
